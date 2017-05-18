@@ -1,0 +1,52 @@
+# Document
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**address** | [**\Swagger\Client\Model\DocumentAddress**](DocumentAddress.md) |  | [optional] 
+**attachment_ids** | **int[]** |  | [optional] 
+**label_address** | [**\Swagger\Client\Model\DocumentAddress**](DocumentAddress.md) |  | [optional] 
+**amount** | **int** |  | [optional] 
+**amount_net** | **int** |  | [optional] 
+**bank_debit_form** | **string** |  | [optional] 
+**cancel_id** | **int** | ID from the cancel document. Only by document type &#x3D;&#x3D; INVOICE. | [optional] 
+**cash_allowance** | **float** |  | [optional] 
+**cash_allowance_days** | **int** |  | [optional] 
+**cash_allowance_text** | **string** |  | [optional] 
+**contact_id** | **int** |  | [optional] 
+**contact_label** | **string** |  | [optional] 
+**contact_text** | **string** |  | [optional] 
+**created_at** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**currency** | **string** |  | [optional] 
+**customer_id** | **int** |  | [optional] 
+**discount** | **string** |  | [optional] 
+**discount_type** | **string** |  | [optional] 
+**document_date** | [**\DateTime**](Date.md) |  | [optional] 
+**due_date** | [**\DateTime**](Date.md) |  | [optional] 
+**edited_at** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**grace_period** | **int** |  | [optional] 
+**id** | **int** |  | [optional] 
+**is_archive** | **bool** |  | [optional] 
+**is_draft** | **bool** | This property is read only. To finish the document call /documents/{id}/done. | [optional] 
+**items** | [**\Swagger\Client\Model\DocumentPosition[]**](DocumentPosition.md) |  | [optional] 
+**last_postbox_id** | **int** |  | [optional] 
+**login_id** | **int** |  | [optional] 
+**number** | **string** |  | [optional] 
+**paid_amount** | **int** |  | [optional] 
+**paid_at** | [**\DateTime**](Date.md) |  | [optional] 
+**pdf_pages** | **int** |  | [optional] 
+**pdf_template** | **string** | Default template is null or &#39;DE&#39;, default english is &#39;EN&#39; and for all others use the numeric template ID. | [optional] 
+**project_id** | **int** |  | [optional] 
+**recurring_options** | [**\Swagger\Client\Model\DocumentRecurring**](DocumentRecurring.md) |  | [optional] 
+**ref_id** | **int** | Reference document id | [optional] 
+**service_date** | [**\Swagger\Client\Model\ServiceDate**](ServiceDate.md) |  | [optional] 
+**status** | **string** | This value can be only use in document type DELIVERY, ORDER, CHARGE or OFFER. NULL is default &#x3D; not set. | [optional] 
+**text** | **string** |  | [optional] 
+**text_prefix** | **string** |  | [optional] 
+**title** | **string** |  | [optional] 
+**type** | **string** | Can only set on create. | [optional] [default to 'INVOICE']
+**use_shipping_address** | **bool** | If true and customer has shipping address then it will be used. | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

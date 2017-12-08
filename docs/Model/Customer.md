@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **company_name** | **string** |  | 
 **country** | **string** | Country code. Example: Germany &#x3D; DE. | [optional] 
 **created_at** | [**\DateTime**](Date.md) |  | [optional] 
+**updated_at** | **string** |  | [optional] 
 **delivery_city** | **string** |  | [optional] 
 **delivery_company_name** | **string** |  | [optional] 
 **delivery_country** | **string** | Country code. Example: Germany &#x3D; DE. | [optional] 

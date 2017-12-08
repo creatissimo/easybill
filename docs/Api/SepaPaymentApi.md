@@ -201,7 +201,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID of SEPA payment |
- **body** | [**\Swagger\Client\Model\SEPAPayment**](../Model/\Swagger\Client\Model\SEPAPayment.md)|  |
+ **body** | [**\Swagger\Client\Model\SEPAPayment**](../Model/SEPAPayment.md)|  |
 
 ### Return type
 
@@ -252,7 +252,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\SEPAPayment**](../Model/\Swagger\Client\Model\SEPAPayment.md)|  |
+ **body** | [**\Swagger\Client\Model\SEPAPayment**](../Model/SEPAPayment.md)|  |
 
 ### Return type
 

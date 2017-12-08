@@ -203,7 +203,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\DocumentPayment**](../Model/\Swagger\Client\Model\DocumentPayment.md)|  |
+ **body** | [**\Swagger\Client\Model\DocumentPayment**](../Model/DocumentPayment.md)|  |
  **paid** | **bool**| Mark document as paid when amount less then payment amount. | [optional]
 
 ### Return type

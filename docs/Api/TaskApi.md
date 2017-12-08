@@ -199,7 +199,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID of task |
- **body** | [**\Swagger\Client\Model\Task**](../Model/\Swagger\Client\Model\Task.md)|  |
+ **body** | [**\Swagger\Client\Model\Task**](../Model/Task.md)|  |
 
 ### Return type
 
@@ -250,7 +250,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\Task**](../Model/\Swagger\Client\Model\Task.md)|  |
+ **body** | [**\Swagger\Client\Model\Task**](../Model/Task.md)|  |
 
 ### Return type
 

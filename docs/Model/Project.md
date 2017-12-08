@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **budget_amount** | **int** |  | [optional] 
 **budget_time** | **int** |  | [optional] 
 **customer_id** | **int** |  | [optional] 
-**hourly_rate** | **int** |  | [optional] 
+**hourly_rate** | **float** |  | [optional] 
 **id** | **int** |  | [optional] 
 **login_id** | **int** |  | [optional] 
 **name** | **string** |  | 

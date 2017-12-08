@@ -203,7 +203,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID of position |
- **body** | [**\Swagger\Client\Model\Position**](../Model/\Swagger\Client\Model\Position.md)|  |
+ **body** | [**\Swagger\Client\Model\Position**](../Model/Position.md)|  |
 
 ### Return type
 
@@ -254,7 +254,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\Position**](../Model/\Swagger\Client\Model\Position.md)|  |
+ **body** | [**\Swagger\Client\Model\Position**](../Model/Position.md)|  |
 
 ### Return type
 

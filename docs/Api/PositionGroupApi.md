@@ -199,7 +199,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID of position goup |
- **body** | [**\Swagger\Client\Model\PositionGroup**](../Model/\Swagger\Client\Model\PositionGroup.md)|  |
+ **body** | [**\Swagger\Client\Model\PositionGroup**](../Model/PositionGroup.md)|  |
 
 ### Return type
 
@@ -250,7 +250,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\PositionGroup**](../Model/\Swagger\Client\Model\PositionGroup.md)|  |
+ **body** | [**\Swagger\Client\Model\PositionGroup**](../Model/PositionGroup.md)|  |
 
 ### Return type
 

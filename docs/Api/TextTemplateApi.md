@@ -199,7 +199,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID of text template |
- **body** | [**\Swagger\Client\Model\TextTemplate**](../Model/\Swagger\Client\Model\TextTemplate.md)|  |
+ **body** | [**\Swagger\Client\Model\TextTemplate**](../Model/TextTemplate.md)|  |
 
 ### Return type
 
@@ -250,7 +250,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\TextTemplate**](../Model/\Swagger\Client\Model\TextTemplate.md)|  |
+ **body** | [**\Swagger\Client\Model\TextTemplate**](../Model/TextTemplate.md)|  |
 
 ### Return type
 

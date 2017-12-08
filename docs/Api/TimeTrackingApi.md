@@ -203,7 +203,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID of time tracking |
- **body** | [**\Swagger\Client\Model\TimeTracking**](../Model/\Swagger\Client\Model\TimeTracking.md)|  |
+ **body** | [**\Swagger\Client\Model\TimeTracking**](../Model/TimeTracking.md)|  |
 
 ### Return type
 
@@ -254,7 +254,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\TimeTracking**](../Model/\Swagger\Client\Model\TimeTracking.md)|  |
+ **body** | [**\Swagger\Client\Model\TimeTracking**](../Model/TimeTracking.md)|  |
 
 ### Return type
 

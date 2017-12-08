@@ -251,7 +251,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID of attachment |
- **body** | [**\Swagger\Client\Model\Attachment**](../Model/\Swagger\Client\Model\Attachment.md)|  |
+ **body** | [**\Swagger\Client\Model\Attachment**](../Model/Attachment.md)|  |
 
 ### Return type
 

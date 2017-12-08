@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **date_from_at** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **date_thru_at** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **description** | **string** |  | 
-**hourly_rate** | **int** |  | [optional] 
+**hourly_rate** | **float** |  | [optional] 
 **id** | **int** |  | [optional] 
 **note** | **string** |  | [optional] 
 **number** | **string** |  | [optional] 

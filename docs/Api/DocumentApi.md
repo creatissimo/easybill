@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **documentsGet**
-> \Swagger\Client\Model\Documents documentsGet($limit, $type, $is_draft, $is_archive, $customer_id, $project_id, $document_date, $paid_at, $title, $number, $cancel_id)
+> \Swagger\Client\Model\Documents documentsGet($page, $limit, $type, $is_draft, $is_archive, $customer_id, $project_id, $document_date, $paid_at, $title, $number, $cancel_id)
 
 Fetch documents list
 
@@ -34,6 +34,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERN
 Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
 $api_instance = new Swagger\Client\Api\DocumentApi();
+$page = 56; // int | Page to get
 $limit = 56; // int | Limited the result. Default is 100. Maximum can be 1000.
 $type = "type_example"; // string | Filter documents by type. Multiple typs seperate with , like type=INVOICE,CREDIT.
 $is_draft = "is_draft_example"; // string | Filter documents by draft flag.
@@ -47,7 +48,7 @@ $number = "number_example"; // string | Filter documents by number.
 $cancel_id = "cancel_id_example"; // string | Filter documents by cancel_id. You can add multiple ids separate by comma like id,id,id. With cancel_id=null you get all not canceled documents.
 
 try {
-    $result = $api_instance->documentsGet($limit, $type, $is_draft, $is_archive, $customer_id, $project_id, $document_date, $paid_at, $title, $number, $cancel_id);
+    $result = $api_instance->documentsGet($page, $limit, $type, $is_draft, $is_archive, $customer_id, $project_id, $document_date, $paid_at, $title, $number, $cancel_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DocumentApi->documentsGet: ', $e->getMessage(), PHP_EOL;
@@ -59,6 +60,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **page** | **int**| Page to get | [optional]
  **limit** | **int**| Limited the result. Default is 100. Maximum can be 1000. | [optional]
  **type** | **string**| Filter documents by type. Multiple typs seperate with , like type&#x3D;INVOICE,CREDIT. | [optional]
  **is_draft** | **string**| Filter documents by draft flag. | [optional]
@@ -376,7 +378,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID of document |
- **body** | [**\Swagger\Client\Model\Document**](../Model/\Swagger\Client\Model\Document.md)|  |
+ **body** | [**\Swagger\Client\Model\Document**](../Model/Document.md)|  |
 
 ### Return type
 
@@ -430,7 +432,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID of document |
  **type** | **string**|  |
- **body** | [**\Swagger\Client\Model\PostBoxRequest**](../Model/\Swagger\Client\Model\PostBoxRequest.md)|  |
+ **body** | [**\Swagger\Client\Model\PostBoxRequest**](../Model/PostBoxRequest.md)|  |
 
 ### Return type
 
@@ -481,7 +483,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\Document**](../Model/\Swagger\Client\Model\Document.md)|  |
+ **body** | [**\Swagger\Client\Model\Document**](../Model/Document.md)|  |
 
 ### Return type
 

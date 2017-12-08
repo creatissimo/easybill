@@ -209,7 +209,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customer_id** | **int**| ID of customer |
  **id** | **int**| ID of contact |
- **body** | [**\Swagger\Client\Model\Contact**](../Model/\Swagger\Client\Model\Contact.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\Contact**](../Model/Contact.md)|  | [optional]
 
 ### Return type
 
@@ -262,7 +262,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customer_id** | **int**| ID of customer |
- **body** | [**\Swagger\Client\Model\Contact**](../Model/\Swagger\Client\Model\Contact.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\Contact**](../Model/Contact.md)|  | [optional]
 
 ### Return type
 

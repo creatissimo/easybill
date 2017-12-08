@@ -219,7 +219,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID of customer that needs to be updated |
- **body** | [**\Swagger\Client\Model\Customer**](../Model/\Swagger\Client\Model\Customer.md)|  |
+ **body** | [**\Swagger\Client\Model\Customer**](../Model/Customer.md)|  |
 
 ### Return type
 
@@ -272,7 +272,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\Customer**](../Model/\Swagger\Client\Model\Customer.md)|  |
+ **body** | [**\Swagger\Client\Model\Customer**](../Model/Customer.md)|  |
 
 ### Return type
 

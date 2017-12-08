@@ -203,7 +203,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID of project |
- **body** | [**\Swagger\Client\Model\Project**](../Model/\Swagger\Client\Model\Project.md)|  |
+ **body** | [**\Swagger\Client\Model\Project**](../Model/Project.md)|  |
 
 ### Return type
 
@@ -254,7 +254,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\Project**](../Model/\Swagger\Client\Model\Project.md)|  |
+ **body** | [**\Swagger\Client\Model\Project**](../Model/Project.md)|  |
 
 ### Return type
 

@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **amount** | **int** |  | 
 **document_id** | **int** |  | 
 **id** | **int** |  | [optional] 
+**is_overdue_fee** | **bool** |  | [optional] 
 **login_id** | **int** |  | [optional] 
 **notice** | **string** |  | [optional] [default to '']
 **payment_at** | [**\DateTime**](Date.md) |  | [optional] 

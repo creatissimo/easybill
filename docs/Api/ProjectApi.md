@@ -4,15 +4,14 @@ All URIs are relative to *https://api.easybill.de/rest/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**projectsGet**](ProjectApi.md#projectsGet) | **GET** /projects | Fetch projects list
-[**projectsIdDelete**](ProjectApi.md#projectsIdDelete) | **DELETE** /projects/{id} | Delete project
-[**projectsIdGet**](ProjectApi.md#projectsIdGet) | **GET** /projects/{id} | Fetch project
-[**projectsIdPut**](ProjectApi.md#projectsIdPut) | **PUT** /projects/{id} | Update project
-[**projectsPost**](ProjectApi.md#projectsPost) | **POST** /projects | Create project
-
+[**projectsGet**](ProjectApi.md#projectsget) | **GET** /projects | Fetch projects list
+[**projectsIdDelete**](ProjectApi.md#projectsiddelete) | **DELETE** /projects/{id} | Delete project
+[**projectsIdGet**](ProjectApi.md#projectsidget) | **GET** /projects/{id} | Fetch project
+[**projectsIdPut**](ProjectApi.md#projectsidput) | **PUT** /projects/{id} | Update project
+[**projectsPost**](ProjectApi.md#projectspost) | **POST** /projects | Create project
 
 # **projectsGet**
-> \Swagger\Client\Model\Projects projectsGet($limit, $customer_id, $status)
+> \Swagger\Client\Model\Projects projectsGet($limit, $page, $customer_id, $status)
 
 Fetch projects list
 
@@ -20,22 +19,28 @@ Fetch projects list
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: Bearer
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-// Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');// Configure HTTP basic authorization: basicAuth
+$config = Swagger\Client\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\ProjectApi();
+
+$apiInstance = new Swagger\Client\Api\ProjectApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $limit = 56; // int | Limited the result. Default is 100. Maximum can be 1000.
+$page = 56; // int | Set current Page. Default is 1.
 $customer_id = "customer_id_example"; // string | Filter projects by customer_id. You can add multiple ids separate by comma like id,id,id.
 $status = "status_example"; // string | Filter projects by status.
 
 try {
-    $result = $api_instance->projectsGet($limit, $customer_id, $status);
+    $result = $apiInstance->projectsGet($limit, $page, $customer_id, $status);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProjectApi->projectsGet: ', $e->getMessage(), PHP_EOL;
@@ -48,6 +53,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **int**| Limited the result. Default is 100. Maximum can be 1000. | [optional]
+ **page** | **int**| Set current Page. Default is 1. | [optional]
  **customer_id** | **string**| Filter projects by customer_id. You can add multiple ids separate by comma like id,id,id. | [optional]
  **status** | **string**| Filter projects by status. | [optional]
 
@@ -61,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -75,20 +81,25 @@ Delete project
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: Bearer
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-// Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');// Configure HTTP basic authorization: basicAuth
+$config = Swagger\Client\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\ProjectApi();
+
+$apiInstance = new Swagger\Client\Api\ProjectApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = 789; // int | ID of project
 
 try {
-    $api_instance->projectsIdDelete($id);
+    $apiInstance->projectsIdDelete($id);
 } catch (Exception $e) {
     echo 'Exception when calling ProjectApi->projectsIdDelete: ', $e->getMessage(), PHP_EOL;
 }
@@ -111,8 +122,8 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -125,20 +136,25 @@ Fetch project
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: Bearer
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-// Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');// Configure HTTP basic authorization: basicAuth
+$config = Swagger\Client\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\ProjectApi();
+
+$apiInstance = new Swagger\Client\Api\ProjectApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = 789; // int | ID of project
 
 try {
-    $result = $api_instance->projectsIdGet($id);
+    $result = $apiInstance->projectsIdGet($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProjectApi->projectsIdGet: ', $e->getMessage(), PHP_EOL;
@@ -162,13 +178,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **projectsIdPut**
-> \Swagger\Client\Model\Project projectsIdPut($id, $body)
+> \Swagger\Client\Model\Project projectsIdPut($body, $id)
 
 Update project
 
@@ -176,21 +192,26 @@ Update project
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: Bearer
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-// Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');// Configure HTTP basic authorization: basicAuth
+$config = Swagger\Client\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\ProjectApi();
-$id = 789; // int | ID of project
+
+$apiInstance = new Swagger\Client\Api\ProjectApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $body = new \Swagger\Client\Model\Project(); // \Swagger\Client\Model\Project | 
+$id = 789; // int | ID of project
 
 try {
-    $result = $api_instance->projectsIdPut($id, $body);
+    $result = $apiInstance->projectsIdPut($body, $id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProjectApi->projectsIdPut: ', $e->getMessage(), PHP_EOL;
@@ -202,8 +223,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of project |
  **body** | [**\Swagger\Client\Model\Project**](../Model/Project.md)|  |
+ **id** | **int**| ID of project |
 
 ### Return type
 
@@ -229,20 +250,25 @@ Create project
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: Bearer
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-// Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');// Configure HTTP basic authorization: basicAuth
+$config = Swagger\Client\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\ProjectApi();
+
+$apiInstance = new Swagger\Client\Api\ProjectApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $body = new \Swagger\Client\Model\Project(); // \Swagger\Client\Model\Project | 
 
 try {
-    $result = $api_instance->projectsPost($body);
+    $result = $apiInstance->projectsPost($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProjectApi->projectsPost: ', $e->getMessage(), PHP_EOL;

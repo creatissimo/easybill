@@ -4,15 +4,14 @@ All URIs are relative to *https://api.easybill.de/rest/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**positionsGet**](PositionApi.md#positionsGet) | **GET** /positions | Fetch positions list
-[**positionsIdDelete**](PositionApi.md#positionsIdDelete) | **DELETE** /positions/{id} | Delete position
-[**positionsIdGet**](PositionApi.md#positionsIdGet) | **GET** /positions/{id} | Fetch position
-[**positionsIdPut**](PositionApi.md#positionsIdPut) | **PUT** /positions/{id} | Update position
-[**positionsPost**](PositionApi.md#positionsPost) | **POST** /positions | Create position
-
+[**positionsGet**](PositionApi.md#positionsget) | **GET** /positions | Fetch positions list
+[**positionsIdDelete**](PositionApi.md#positionsiddelete) | **DELETE** /positions/{id} | Delete position
+[**positionsIdGet**](PositionApi.md#positionsidget) | **GET** /positions/{id} | Fetch position
+[**positionsIdPut**](PositionApi.md#positionsidput) | **PUT** /positions/{id} | Update position
+[**positionsPost**](PositionApi.md#positionspost) | **POST** /positions | Create position
 
 # **positionsGet**
-> \Swagger\Client\Model\Positions positionsGet($limit, $type, $number)
+> \Swagger\Client\Model\Positions positionsGet($limit, $page, $type, $number)
 
 Fetch positions list
 
@@ -20,22 +19,28 @@ Fetch positions list
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: Bearer
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-// Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');// Configure HTTP basic authorization: basicAuth
+$config = Swagger\Client\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\PositionApi();
+
+$apiInstance = new Swagger\Client\Api\PositionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $limit = 56; // int | Limited the result. Default is 100. Maximum can be 1000.
+$page = 56; // int | Set current Page. Default is 1.
 $type = "type_example"; // string | Filter positions by type.
 $number = "number_example"; // string | Filter positions by number. You can add multiple numbers separate by comma like no,no,no.
 
 try {
-    $result = $api_instance->positionsGet($limit, $type, $number);
+    $result = $apiInstance->positionsGet($limit, $page, $type, $number);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PositionApi->positionsGet: ', $e->getMessage(), PHP_EOL;
@@ -48,6 +53,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **int**| Limited the result. Default is 100. Maximum can be 1000. | [optional]
+ **page** | **int**| Set current Page. Default is 1. | [optional]
  **type** | **string**| Filter positions by type. | [optional]
  **number** | **string**| Filter positions by number. You can add multiple numbers separate by comma like no,no,no. | [optional]
 
@@ -61,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -75,20 +81,25 @@ Delete position
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: Bearer
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-// Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');// Configure HTTP basic authorization: basicAuth
+$config = Swagger\Client\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\PositionApi();
+
+$apiInstance = new Swagger\Client\Api\PositionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = 789; // int | ID of position
 
 try {
-    $api_instance->positionsIdDelete($id);
+    $apiInstance->positionsIdDelete($id);
 } catch (Exception $e) {
     echo 'Exception when calling PositionApi->positionsIdDelete: ', $e->getMessage(), PHP_EOL;
 }
@@ -111,8 +122,8 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -125,20 +136,25 @@ Fetch position
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: Bearer
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-// Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');// Configure HTTP basic authorization: basicAuth
+$config = Swagger\Client\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\PositionApi();
+
+$apiInstance = new Swagger\Client\Api\PositionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = 789; // int | ID of position
 
 try {
-    $result = $api_instance->positionsIdGet($id);
+    $result = $apiInstance->positionsIdGet($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PositionApi->positionsIdGet: ', $e->getMessage(), PHP_EOL;
@@ -162,13 +178,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **positionsIdPut**
-> \Swagger\Client\Model\Position positionsIdPut($id, $body)
+> \Swagger\Client\Model\Position positionsIdPut($body, $id)
 
 Update position
 
@@ -176,21 +192,26 @@ Update position
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: Bearer
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-// Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');// Configure HTTP basic authorization: basicAuth
+$config = Swagger\Client\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\PositionApi();
-$id = 789; // int | ID of position
+
+$apiInstance = new Swagger\Client\Api\PositionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $body = new \Swagger\Client\Model\Position(); // \Swagger\Client\Model\Position | 
+$id = 789; // int | ID of position
 
 try {
-    $result = $api_instance->positionsIdPut($id, $body);
+    $result = $apiInstance->positionsIdPut($body, $id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PositionApi->positionsIdPut: ', $e->getMessage(), PHP_EOL;
@@ -202,8 +223,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of position |
  **body** | [**\Swagger\Client\Model\Position**](../Model/Position.md)|  |
+ **id** | **int**| ID of position |
 
 ### Return type
 
@@ -229,20 +250,25 @@ Create position
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: Bearer
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-// Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');// Configure HTTP basic authorization: basicAuth
+$config = Swagger\Client\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\PositionApi();
+
+$apiInstance = new Swagger\Client\Api\PositionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $body = new \Swagger\Client\Model\Position(); // \Swagger\Client\Model\Position | 
 
 try {
-    $result = $api_instance->positionsPost($body);
+    $result = $apiInstance->positionsPost($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PositionApi->positionsPost: ', $e->getMessage(), PHP_EOL;

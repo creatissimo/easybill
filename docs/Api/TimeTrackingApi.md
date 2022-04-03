@@ -4,15 +4,14 @@ All URIs are relative to *https://api.easybill.de/rest/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**timeTrackingsGet**](TimeTrackingApi.md#timeTrackingsGet) | **GET** /time-trackings | Fetch time trackings list
-[**timeTrackingsIdDelete**](TimeTrackingApi.md#timeTrackingsIdDelete) | **DELETE** /time-trackings/{id} | Delete time tracking
-[**timeTrackingsIdGet**](TimeTrackingApi.md#timeTrackingsIdGet) | **GET** /time-trackings/{id} | Fetch time tracking
-[**timeTrackingsIdPut**](TimeTrackingApi.md#timeTrackingsIdPut) | **PUT** /time-trackings/{id} | Update time tracking
-[**timeTrackingsPost**](TimeTrackingApi.md#timeTrackingsPost) | **POST** /time-trackings | Create time tracking
-
+[**timeTrackingsGet**](TimeTrackingApi.md#timetrackingsget) | **GET** /time-trackings | Fetch time trackings list
+[**timeTrackingsIdDelete**](TimeTrackingApi.md#timetrackingsiddelete) | **DELETE** /time-trackings/{id} | Delete time tracking
+[**timeTrackingsIdGet**](TimeTrackingApi.md#timetrackingsidget) | **GET** /time-trackings/{id} | Fetch time tracking
+[**timeTrackingsIdPut**](TimeTrackingApi.md#timetrackingsidput) | **PUT** /time-trackings/{id} | Update time tracking
+[**timeTrackingsPost**](TimeTrackingApi.md#timetrackingspost) | **POST** /time-trackings | Create time tracking
 
 # **timeTrackingsGet**
-> \Swagger\Client\Model\TimeTrackings timeTrackingsGet($limit, $login_id, $project_id)
+> \Swagger\Client\Model\TimeTrackings timeTrackingsGet($limit, $page, $login_id, $project_id)
 
 Fetch time trackings list
 
@@ -20,22 +19,28 @@ Fetch time trackings list
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: Bearer
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-// Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');// Configure HTTP basic authorization: basicAuth
+$config = Swagger\Client\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\TimeTrackingApi();
+
+$apiInstance = new Swagger\Client\Api\TimeTrackingApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $limit = 56; // int | Limited the result. Default is 100. Maximum can be 1000.
+$page = 56; // int | Set current Page. Default is 1.
 $login_id = "login_id_example"; // string | Filter time-tracking by login_id. You can add multiple ids separate by comma like id,id,id.
 $project_id = "project_id_example"; // string | Filter time-tracking by project_id. You can add multiple ids separate by comma like id,id,id.
 
 try {
-    $result = $api_instance->timeTrackingsGet($limit, $login_id, $project_id);
+    $result = $apiInstance->timeTrackingsGet($limit, $page, $login_id, $project_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TimeTrackingApi->timeTrackingsGet: ', $e->getMessage(), PHP_EOL;
@@ -48,6 +53,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **int**| Limited the result. Default is 100. Maximum can be 1000. | [optional]
+ **page** | **int**| Set current Page. Default is 1. | [optional]
  **login_id** | **string**| Filter time-tracking by login_id. You can add multiple ids separate by comma like id,id,id. | [optional]
  **project_id** | **string**| Filter time-tracking by project_id. You can add multiple ids separate by comma like id,id,id. | [optional]
 
@@ -61,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -75,20 +81,25 @@ Delete time tracking
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: Bearer
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-// Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');// Configure HTTP basic authorization: basicAuth
+$config = Swagger\Client\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\TimeTrackingApi();
+
+$apiInstance = new Swagger\Client\Api\TimeTrackingApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = 789; // int | ID of time tracking
 
 try {
-    $api_instance->timeTrackingsIdDelete($id);
+    $apiInstance->timeTrackingsIdDelete($id);
 } catch (Exception $e) {
     echo 'Exception when calling TimeTrackingApi->timeTrackingsIdDelete: ', $e->getMessage(), PHP_EOL;
 }
@@ -111,8 +122,8 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -125,20 +136,25 @@ Fetch time tracking
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: Bearer
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-// Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');// Configure HTTP basic authorization: basicAuth
+$config = Swagger\Client\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\TimeTrackingApi();
+
+$apiInstance = new Swagger\Client\Api\TimeTrackingApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = 789; // int | ID of time tracking
 
 try {
-    $result = $api_instance->timeTrackingsIdGet($id);
+    $result = $apiInstance->timeTrackingsIdGet($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TimeTrackingApi->timeTrackingsIdGet: ', $e->getMessage(), PHP_EOL;
@@ -162,13 +178,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **timeTrackingsIdPut**
-> \Swagger\Client\Model\TimeTracking timeTrackingsIdPut($id, $body)
+> \Swagger\Client\Model\TimeTracking timeTrackingsIdPut($body, $id)
 
 Update time tracking
 
@@ -176,21 +192,26 @@ Update time tracking
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: Bearer
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-// Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');// Configure HTTP basic authorization: basicAuth
+$config = Swagger\Client\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\TimeTrackingApi();
-$id = 789; // int | ID of time tracking
+
+$apiInstance = new Swagger\Client\Api\TimeTrackingApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $body = new \Swagger\Client\Model\TimeTracking(); // \Swagger\Client\Model\TimeTracking | 
+$id = 789; // int | ID of time tracking
 
 try {
-    $result = $api_instance->timeTrackingsIdPut($id, $body);
+    $result = $apiInstance->timeTrackingsIdPut($body, $id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TimeTrackingApi->timeTrackingsIdPut: ', $e->getMessage(), PHP_EOL;
@@ -202,8 +223,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of time tracking |
  **body** | [**\Swagger\Client\Model\TimeTracking**](../Model/TimeTracking.md)|  |
+ **id** | **int**| ID of time tracking |
 
 ### Return type
 
@@ -229,20 +250,25 @@ Create time tracking
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: Bearer
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-// Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');// Configure HTTP basic authorization: basicAuth
+$config = Swagger\Client\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\TimeTrackingApi();
+
+$apiInstance = new Swagger\Client\Api\TimeTrackingApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $body = new \Swagger\Client\Model\TimeTracking(); // \Swagger\Client\Model\TimeTracking | 
 
 try {
-    $result = $api_instance->timeTrackingsPost($body);
+    $result = $apiInstance->timeTrackingsPost($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TimeTrackingApi->timeTrackingsPost: ', $e->getMessage(), PHP_EOL;

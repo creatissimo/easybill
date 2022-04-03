@@ -4,13 +4,12 @@ All URIs are relative to *https://api.easybill.de/rest/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**postBoxesGet**](PostBoxApi.md#postBoxesGet) | **GET** /post-boxes | Fetch post box list
-[**postBoxesIdDelete**](PostBoxApi.md#postBoxesIdDelete) | **DELETE** /post-boxes/{id} | Delete post box
-[**postBoxesIdGet**](PostBoxApi.md#postBoxesIdGet) | **GET** /post-boxes/{id} | Fetch post box
-
+[**postBoxesGet**](PostBoxApi.md#postboxesget) | **GET** /post-boxes | Fetch post box list
+[**postBoxesIdDelete**](PostBoxApi.md#postboxesiddelete) | **DELETE** /post-boxes/{id} | Delete post box
+[**postBoxesIdGet**](PostBoxApi.md#postboxesidget) | **GET** /post-boxes/{id} | Fetch post box
 
 # **postBoxesGet**
-> \Swagger\Client\Model\PostBoxes postBoxesGet($limit, $type, $status, $document_id)
+> \Swagger\Client\Model\PostBoxes postBoxesGet($limit, $page, $type, $status, $document_id)
 
 Fetch post box list
 
@@ -18,23 +17,29 @@ Fetch post box list
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: Bearer
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-// Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');// Configure HTTP basic authorization: basicAuth
+$config = Swagger\Client\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\PostBoxApi();
+
+$apiInstance = new Swagger\Client\Api\PostBoxApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $limit = 56; // int | Limited the result. Default is 100. Maximum can be 1000.
+$page = 56; // int | Set current Page. Default is 1.
 $type = "type_example"; // string | Filter post boxes by type. Multiple typs seperate with , like type=EMAIL,FAX.
 $status = "status_example"; // string | Filter post boxes by status.
 $document_id = "document_id_example"; // string | Filter post boxes by document_id. You can add multiple document ids separate by comma like id,id,id.
 
 try {
-    $result = $api_instance->postBoxesGet($limit, $type, $status, $document_id);
+    $result = $apiInstance->postBoxesGet($limit, $page, $type, $status, $document_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PostBoxApi->postBoxesGet: ', $e->getMessage(), PHP_EOL;
@@ -47,6 +52,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **int**| Limited the result. Default is 100. Maximum can be 1000. | [optional]
+ **page** | **int**| Set current Page. Default is 1. | [optional]
  **type** | **string**| Filter post boxes by type. Multiple typs seperate with , like type&#x3D;EMAIL,FAX. | [optional]
  **status** | **string**| Filter post boxes by status. | [optional]
  **document_id** | **string**| Filter post boxes by document_id. You can add multiple document ids separate by comma like id,id,id. | [optional]
@@ -61,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -75,20 +81,25 @@ Delete post box
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: Bearer
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-// Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');// Configure HTTP basic authorization: basicAuth
+$config = Swagger\Client\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\PostBoxApi();
+
+$apiInstance = new Swagger\Client\Api\PostBoxApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = 789; // int | ID of post box
 
 try {
-    $api_instance->postBoxesIdDelete($id);
+    $apiInstance->postBoxesIdDelete($id);
 } catch (Exception $e) {
     echo 'Exception when calling PostBoxApi->postBoxesIdDelete: ', $e->getMessage(), PHP_EOL;
 }
@@ -111,8 +122,8 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -125,20 +136,25 @@ Fetch post box
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: Bearer
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-// Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');// Configure HTTP basic authorization: basicAuth
+$config = Swagger\Client\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\PostBoxApi();
+
+$apiInstance = new Swagger\Client\Api\PostBoxApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = 789; // int | ID of post box
 
 try {
-    $result = $api_instance->postBoxesIdGet($id);
+    $result = $apiInstance->postBoxesIdGet($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PostBoxApi->postBoxesIdGet: ', $e->getMessage(), PHP_EOL;
@@ -162,7 +178,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)

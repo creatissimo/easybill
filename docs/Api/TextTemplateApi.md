@@ -4,15 +4,14 @@ All URIs are relative to *https://api.easybill.de/rest/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**textTemplatesGet**](TextTemplateApi.md#textTemplatesGet) | **GET** /text-templates | Fetch text templates list
-[**textTemplatesIdDelete**](TextTemplateApi.md#textTemplatesIdDelete) | **DELETE** /text-templates/{id} | Delete text template
-[**textTemplatesIdGet**](TextTemplateApi.md#textTemplatesIdGet) | **GET** /text-templates/{id} | Fetch text template
-[**textTemplatesIdPut**](TextTemplateApi.md#textTemplatesIdPut) | **PUT** /text-templates/{id} | Update text template
-[**textTemplatesPost**](TextTemplateApi.md#textTemplatesPost) | **POST** /text-templates | Create text template
-
+[**textTemplatesGet**](TextTemplateApi.md#texttemplatesget) | **GET** /text-templates | Fetch text templates list
+[**textTemplatesIdDelete**](TextTemplateApi.md#texttemplatesiddelete) | **DELETE** /text-templates/{id} | Delete text template
+[**textTemplatesIdGet**](TextTemplateApi.md#texttemplatesidget) | **GET** /text-templates/{id} | Fetch text template
+[**textTemplatesIdPut**](TextTemplateApi.md#texttemplatesidput) | **PUT** /text-templates/{id} | Update text template
+[**textTemplatesPost**](TextTemplateApi.md#texttemplatespost) | **POST** /text-templates | Create text template
 
 # **textTemplatesGet**
-> \Swagger\Client\Model\TextTemplates textTemplatesGet($limit)
+> \Swagger\Client\Model\TextTemplates textTemplatesGet($limit, $page)
 
 Fetch text templates list
 
@@ -20,20 +19,26 @@ Fetch text templates list
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: Bearer
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-// Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');// Configure HTTP basic authorization: basicAuth
+$config = Swagger\Client\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\TextTemplateApi();
+
+$apiInstance = new Swagger\Client\Api\TextTemplateApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $limit = 56; // int | Limited the result. Default is 100. Maximum can be 1000.
+$page = 56; // int | Set current Page. Default is 1.
 
 try {
-    $result = $api_instance->textTemplatesGet($limit);
+    $result = $apiInstance->textTemplatesGet($limit, $page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TextTemplateApi->textTemplatesGet: ', $e->getMessage(), PHP_EOL;
@@ -46,6 +51,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **int**| Limited the result. Default is 100. Maximum can be 1000. | [optional]
+ **page** | **int**| Set current Page. Default is 1. | [optional]
 
 ### Return type
 
@@ -57,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -71,20 +77,25 @@ Delete text template
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: Bearer
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-// Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');// Configure HTTP basic authorization: basicAuth
+$config = Swagger\Client\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\TextTemplateApi();
+
+$apiInstance = new Swagger\Client\Api\TextTemplateApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = 789; // int | ID of text template
 
 try {
-    $api_instance->textTemplatesIdDelete($id);
+    $apiInstance->textTemplatesIdDelete($id);
 } catch (Exception $e) {
     echo 'Exception when calling TextTemplateApi->textTemplatesIdDelete: ', $e->getMessage(), PHP_EOL;
 }
@@ -107,8 +118,8 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -121,20 +132,25 @@ Fetch text template
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: Bearer
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-// Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');// Configure HTTP basic authorization: basicAuth
+$config = Swagger\Client\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\TextTemplateApi();
+
+$apiInstance = new Swagger\Client\Api\TextTemplateApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = 789; // int | ID of text template
 
 try {
-    $result = $api_instance->textTemplatesIdGet($id);
+    $result = $apiInstance->textTemplatesIdGet($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TextTemplateApi->textTemplatesIdGet: ', $e->getMessage(), PHP_EOL;
@@ -158,13 +174,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **textTemplatesIdPut**
-> \Swagger\Client\Model\TextTemplate textTemplatesIdPut($id, $body)
+> \Swagger\Client\Model\TextTemplate textTemplatesIdPut($body, $id)
 
 Update text template
 
@@ -172,21 +188,26 @@ Update text template
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: Bearer
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-// Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');// Configure HTTP basic authorization: basicAuth
+$config = Swagger\Client\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\TextTemplateApi();
-$id = 789; // int | ID of text template
+
+$apiInstance = new Swagger\Client\Api\TextTemplateApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $body = new \Swagger\Client\Model\TextTemplate(); // \Swagger\Client\Model\TextTemplate | 
+$id = 789; // int | ID of text template
 
 try {
-    $result = $api_instance->textTemplatesIdPut($id, $body);
+    $result = $apiInstance->textTemplatesIdPut($body, $id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TextTemplateApi->textTemplatesIdPut: ', $e->getMessage(), PHP_EOL;
@@ -198,8 +219,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of text template |
  **body** | [**\Swagger\Client\Model\TextTemplate**](../Model/TextTemplate.md)|  |
+ **id** | **int**| ID of text template |
 
 ### Return type
 
@@ -225,20 +246,25 @@ Create text template
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: Bearer
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-// Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');// Configure HTTP basic authorization: basicAuth
+$config = Swagger\Client\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\TextTemplateApi();
+
+$apiInstance = new Swagger\Client\Api\TextTemplateApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $body = new \Swagger\Client\Model\TextTemplate(); // \Swagger\Client\Model\TextTemplate | 
 
 try {
-    $result = $api_instance->textTemplatesPost($body);
+    $result = $apiInstance->textTemplatesPost($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TextTemplateApi->textTemplatesPost: ', $e->getMessage(), PHP_EOL;

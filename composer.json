@@ -8,7 +8,7 @@
         "api"
     ],
     "homepage": "http://creatissimo.net",
-    "license": "",
+    "license": "MIT",
     "authors": [
         {
             "name": "Swagger and contributors",

@@ -57,23 +57,23 @@ class Configuration
     /**
      * Access token for OAuth
      *
-     * @var string
+     * @var string|null
      */
-    protected $accessToken = '';
+    protected $accessToken = null;
 
     /**
      * Username for HTTP basic authentication
      *
-     * @var string
+     * @var string|null
      */
-    protected $username = '';
+    protected $username = null;
 
     /**
      * Password for HTTP basic authentication
      *
-     * @var string
+     * @var string|null
      */
-    protected $password = '';
+    protected $password = null;
 
     /**
      * The host
@@ -186,7 +186,7 @@ class Configuration
     /**
      * Gets the access token for OAuth
      *
-     * @return string Access token for OAuth
+     * @return string|null  Access token for OAuth
      */
     public function getAccessToken()
     {
@@ -209,7 +209,7 @@ class Configuration
     /**
      * Gets the username for HTTP basic authentication
      *
-     * @return string Username for HTTP basic authentication
+     * @return string|null Username for HTTP basic authentication
      */
     public function getUsername()
     {
@@ -219,7 +219,7 @@ class Configuration
     /**
      * Sets the password for HTTP basic authentication
      *
-     * @param string $password Password for HTTP basic authentication
+     * @param string|null $password Password for HTTP basic authentication
      *
      * @return $this
      */

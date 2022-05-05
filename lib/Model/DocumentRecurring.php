@@ -381,21 +381,21 @@ self::TARGET_TYPE_OFFER,        ];
     {
         $this->container['next_date'] = isset($data['next_date']) ? $data['next_date'] : null;
         $this->container['frequency'] = isset($data['frequency']) ? $data['frequency'] : 'MONTHLY';
-        $this->container['frequency_special'] = isset($data['frequency_special']) ? $data['frequency_special'] : 'null';
+        $this->container['frequency_special'] = isset($data['frequency_special']) ? $data['frequency_special'] : null;
         $this->container['interval'] = isset($data['interval']) ? $data['interval'] : null;
-        $this->container['end_date_or_count'] = isset($data['end_date_or_count']) ? $data['end_date_or_count'] : 'null';
+        $this->container['end_date_or_count'] = isset($data['end_date_or_count']) ? $data['end_date_or_count'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : 'WAITING';
         $this->container['as_draft'] = isset($data['as_draft']) ? $data['as_draft'] : false;
         $this->container['is_notify'] = isset($data['is_notify']) ? $data['is_notify'] : false;
-        $this->container['send_as'] = isset($data['send_as']) ? $data['send_as'] : 'null';
+        $this->container['send_as'] = isset($data['send_as']) ? $data['send_as'] : null;
         $this->container['is_sign'] = isset($data['is_sign']) ? $data['is_sign'] : false;
         $this->container['is_paid'] = isset($data['is_paid']) ? $data['is_paid'] : false;
         $this->container['paid_date_option'] = isset($data['paid_date_option']) ? $data['paid_date_option'] : 'created_date';
         $this->container['is_sepa'] = isset($data['is_sepa']) ? $data['is_sepa'] : false;
-        $this->container['sepa_local_instrument'] = isset($data['sepa_local_instrument']) ? $data['sepa_local_instrument'] : 'null';
-        $this->container['sepa_sequence_type'] = isset($data['sepa_sequence_type']) ? $data['sepa_sequence_type'] : 'null';
-        $this->container['sepa_reference'] = isset($data['sepa_reference']) ? $data['sepa_reference'] : 'null';
-        $this->container['sepa_remittance_information'] = isset($data['sepa_remittance_information']) ? $data['sepa_remittance_information'] : 'null';
+        $this->container['sepa_local_instrument'] = isset($data['sepa_local_instrument']) ? $data['sepa_local_instrument'] : null;
+        $this->container['sepa_sequence_type'] = isset($data['sepa_sequence_type']) ? $data['sepa_sequence_type'] : null;
+        $this->container['sepa_reference'] = isset($data['sepa_reference']) ? $data['sepa_reference'] : null;
+        $this->container['sepa_remittance_information'] = isset($data['sepa_remittance_information']) ? $data['sepa_remittance_information'] : null;
         $this->container['target_type'] = isset($data['target_type']) ? $data['target_type'] : 'INVOICE';
     }
 

@@ -111,7 +111,7 @@ class PositionExportIdentifierExtended implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'null' => 'NULL',
+        'null' => NULL,
 'n_stb' => 'nStb',
 'n_stb_ust_id' => 'nStbUstID',
 'n_stb_none_ust_id' => 'nStbNoneUstID',
@@ -214,16 +214,16 @@ class PositionExportIdentifierExtended implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['null'] = isset($data['null']) ? $data['null'] : 'null';
-        $this->container['n_stb'] = isset($data['n_stb']) ? $data['n_stb'] : 'null';
-        $this->container['n_stb_ust_id'] = isset($data['n_stb_ust_id']) ? $data['n_stb_ust_id'] : 'null';
-        $this->container['n_stb_none_ust_id'] = isset($data['n_stb_none_ust_id']) ? $data['n_stb_none_ust_id'] : 'null';
-        $this->container['n_stb_im'] = isset($data['n_stb_im']) ? $data['n_stb_im'] : 'null';
-        $this->container['revc'] = isset($data['revc']) ? $data['revc'] : 'null';
-        $this->container['ig'] = isset($data['ig']) ? $data['ig'] : 'null';
-        $this->container['al'] = isset($data['al']) ? $data['al'] : 'null';
-        $this->container['s_stfr'] = isset($data['s_stfr']) ? $data['s_stfr'] : 'null';
-        $this->container['small_business'] = isset($data['small_business']) ? $data['small_business'] : 'null';
+        $this->container['null'] = isset($data['null']) ? $data['null'] : null;
+        $this->container['n_stb'] = isset($data['n_stb']) ? $data['n_stb'] : null;
+        $this->container['n_stb_ust_id'] = isset($data['n_stb_ust_id']) ? $data['n_stb_ust_id'] : null;
+        $this->container['n_stb_none_ust_id'] = isset($data['n_stb_none_ust_id']) ? $data['n_stb_none_ust_id'] : null;
+        $this->container['n_stb_im'] = isset($data['n_stb_im']) ? $data['n_stb_im'] : null;
+        $this->container['revc'] = isset($data['revc']) ? $data['revc'] : null;
+        $this->container['ig'] = isset($data['ig']) ? $data['ig'] : null;
+        $this->container['al'] = isset($data['al']) ? $data['al'] : null;
+        $this->container['s_stfr'] = isset($data['s_stfr']) ? $data['s_stfr'] : null;
+        $this->container['small_business'] = isset($data['small_business']) ? $data['small_business'] : null;
     }
 
     /**

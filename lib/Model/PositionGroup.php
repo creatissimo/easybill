@@ -194,7 +194,7 @@ class PositionGroup implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['description'] = isset($data['description']) ? $data['description'] : 'null';
+        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['login_id'] = isset($data['login_id']) ? $data['login_id'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['number'] = isset($data['number']) ? $data['number'] : null;

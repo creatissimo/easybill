@@ -190,7 +190,7 @@ class CustomerGroup implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['description'] = isset($data['description']) ? $data['description'] : 'null';
+        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['number'] = isset($data['number']) ? $data['number'] : null;
         $this->container['display_name'] = isset($data['display_name']) ? $data['display_name'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;

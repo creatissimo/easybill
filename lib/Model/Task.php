@@ -304,11 +304,11 @@ self::STATUS_CANCEL,        ];
      */
     public function __construct(array $data = null)
     {
-        $this->container['category'] = isset($data['category']) ? $data['category'] : 'null';
-        $this->container['category_custom'] = isset($data['category_custom']) ? $data['category_custom'] : 'null';
+        $this->container['category'] = isset($data['category']) ? $data['category'] : null;
+        $this->container['category_custom'] = isset($data['category_custom']) ? $data['category_custom'] : null;
         $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
         $this->container['customer_id'] = isset($data['customer_id']) ? $data['customer_id'] : null;
-        $this->container['description'] = isset($data['description']) ? $data['description'] : 'null';
+        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['document_id'] = isset($data['document_id']) ? $data['document_id'] : null;
         $this->container['end_at'] = isset($data['end_at']) ? $data['end_at'] : null;
         $this->container['finish_at'] = isset($data['finish_at']) ? $data['finish_at'] : null;

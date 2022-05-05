@@ -236,7 +236,7 @@ class TimeTracking implements ModelInterface, ArrayAccess
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['hourly_rate'] = isset($data['hourly_rate']) ? $data['hourly_rate'] : 0.0;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['note'] = isset($data['note']) ? $data['note'] : 'null';
+        $this->container['note'] = isset($data['note']) ? $data['note'] : null;
         $this->container['number'] = isset($data['number']) ? $data['number'] : null;
         $this->container['position_id'] = isset($data['position_id']) ? $data['position_id'] : null;
         $this->container['project_id'] = isset($data['project_id']) ? $data['project_id'] : null;

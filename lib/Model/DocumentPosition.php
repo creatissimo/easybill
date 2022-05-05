@@ -360,28 +360,28 @@ self::ITEM_TYPE_UNDEFINED,        ];
      */
     public function __construct(array $data = null)
     {
-        $this->container['number'] = isset($data['number']) ? $data['number'] : 'null';
-        $this->container['description'] = isset($data['description']) ? $data['description'] : 'null';
+        $this->container['number'] = isset($data['number']) ? $data['number'] : null;
+        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['document_note'] = isset($data['document_note']) ? $data['document_note'] : null;
         $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : 1.0;
         $this->container['quantity_str'] = isset($data['quantity_str']) ? $data['quantity_str'] : null;
-        $this->container['unit'] = isset($data['unit']) ? $data['unit'] : 'null';
+        $this->container['unit'] = isset($data['unit']) ? $data['unit'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : 'POSITION';
         $this->container['position'] = isset($data['position']) ? $data['position'] : null;
         $this->container['single_price_net'] = isset($data['single_price_net']) ? $data['single_price_net'] : null;
         $this->container['single_price_gross'] = isset($data['single_price_gross']) ? $data['single_price_gross'] : null;
         $this->container['vat_percent'] = isset($data['vat_percent']) ? $data['vat_percent'] : 0.0;
         $this->container['discount'] = isset($data['discount']) ? $data['discount'] : null;
-        $this->container['discount_type'] = isset($data['discount_type']) ? $data['discount_type'] : 'null';
+        $this->container['discount_type'] = isset($data['discount_type']) ? $data['discount_type'] : null;
         $this->container['position_id'] = isset($data['position_id']) ? $data['position_id'] : null;
         $this->container['total_price_net'] = isset($data['total_price_net']) ? $data['total_price_net'] : null;
         $this->container['total_price_gross'] = isset($data['total_price_gross']) ? $data['total_price_gross'] : null;
         $this->container['total_vat'] = isset($data['total_vat']) ? $data['total_vat'] : null;
         $this->container['serial_number_id'] = isset($data['serial_number_id']) ? $data['serial_number_id'] : null;
         $this->container['serial_number'] = isset($data['serial_number']) ? $data['serial_number'] : null;
-        $this->container['booking_account'] = isset($data['booking_account']) ? $data['booking_account'] : 'null';
-        $this->container['export_cost_1'] = isset($data['export_cost_1']) ? $data['export_cost_1'] : 'null';
-        $this->container['export_cost_2'] = isset($data['export_cost_2']) ? $data['export_cost_2'] : 'null';
+        $this->container['booking_account'] = isset($data['booking_account']) ? $data['booking_account'] : null;
+        $this->container['export_cost_1'] = isset($data['export_cost_1']) ? $data['export_cost_1'] : null;
+        $this->container['export_cost_2'] = isset($data['export_cost_2']) ? $data['export_cost_2'] : null;
         $this->container['cost_price_net'] = isset($data['cost_price_net']) ? $data['cost_price_net'] : null;
         $this->container['cost_price_total'] = isset($data['cost_price_total']) ? $data['cost_price_total'] : null;
         $this->container['cost_price_charge'] = isset($data['cost_price_charge']) ? $data['cost_price_charge'] : null;

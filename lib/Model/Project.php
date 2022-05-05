@@ -266,7 +266,7 @@ self::BUDGET_NOTIFY_FREQUENCY_NEVER,        ];
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['login_id'] = isset($data['login_id']) ? $data['login_id'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['note'] = isset($data['note']) ? $data['note'] : 'null';
+        $this->container['note'] = isset($data['note']) ? $data['note'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : 'OPEN';
         $this->container['due_at'] = isset($data['due_at']) ? $data['due_at'] : null;
         $this->container['budget_notify_frequency'] = isset($data['budget_notify_frequency']) ? $data['budget_notify_frequency'] : 'ALWAYS';
